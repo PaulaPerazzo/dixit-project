@@ -3,20 +3,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
 
-export default function Home({ repositories, date }) {
-
-  return (
-    <>
-      <h1>{date}</h1>
-
-      <ul>
-        {repositories.map((repo) => (
-          <li key={repo}>{repo}</li>
-          ))};
-      </ul>
-    </>
-  );
-};
 
 // export default Home
 
@@ -27,7 +13,7 @@ export default function Home({ repositories, date }) {
 //   const repositoryNames = data.map((item) => item.name);
 
 //   return {
-//     props: {
+  //     props: {
 //       repositories: repositoryNames,
 //       date: new Date().toISOString(),
 //     }
@@ -40,15 +26,34 @@ export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch('https://api.github.com/users/PaulaPerazzo/repos');
   
   const data = await response.json();
-  const repositoryNames = data.map((item) => item.name);
-
+  
+  const repositoryNames = data.map((item: { name: any; }) => item.name);
+    
   return {
     props: {
       repositories: repositoryNames,
       date: new Date().toISOString(),
     },
 
-    revalidate: 5,
+    revalidate: 60*60*4,
   };
 };
 
+//@ts-ignore
+export default function Home({ repositories, date }) {
+
+  console.log(repositories)
+
+  return (
+    <>
+      <h1>{date}</h1>
+
+      <ul>
+        {/* @ts-ignore */}
+        {repositories.map((repo) => (
+          <li key={repo}>{repo}</li>
+          ))};
+      </ul>
+    </>
+  );
+};
