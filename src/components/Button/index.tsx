@@ -1,11 +1,19 @@
 import React from 'react';
 import { StyledButton } from './style';
 
-function Button() {
+type ButtonProps = {
+  text: string;
+  onClick: () => void;
+}
+
+const Button: React.FC<ButtonProps> = ({
+  text, onClick
+}) => {
   return (
-    <StyledButton>
-      aa
+    <StyledButton onClick={onClick}>
+      {text}
     </StyledButton>
+      
   )
 }
 

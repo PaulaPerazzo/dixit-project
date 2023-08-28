@@ -5,10 +5,15 @@ import { Button } from '@/components'
 const inter = Inter({ subsets: ['latin'] })
 
 function Home() {
+
+  const handleClick = () => {
+    console.log('button clicked!');
+  };
+
   return (
     <>
       <div>HOME</div>
-      <Button />
+      <Button text='ojasdn' onClick={handleClick} />
     </>
   )
 }
