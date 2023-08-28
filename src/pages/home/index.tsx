@@ -1,4 +1,4 @@
-import { Button } from '@/components'
+import { Button, SecondaryButton } from '@/components'
 
 function Home() {
 
@@ -10,6 +10,7 @@ function Home() {
     <>
       <div>HOME</div>
       <Button text='ojasdn' onClick={handleClick} />
+      <SecondaryButton text='yes / no' onClick={handleClick} />
     </>
   )
 }
