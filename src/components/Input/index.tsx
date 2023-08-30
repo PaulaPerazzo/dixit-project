@@ -1,10 +1,16 @@
 import React from 'react';
 import { InputBox } from './style';
 
-function Input() {
+type InputPropTypes = {
+  placeholder: string;
+};
+
+const Input: React.FC<InputPropTypes> = ({
+  placeholder,
+}) => {
   return (
-    <InputBox placeholder='aaa' />
+    <InputBox placeholder={placeholder} />
   )
-}
+};
 
 export default Input;
