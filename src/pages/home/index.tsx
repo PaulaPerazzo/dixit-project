@@ -1,14 +1,16 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import { Button } from '@/components'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Button, SecondaryButton } from '@/components'
 
 function Home() {
+
+  const handleClick = () => {
+    console.log('button clicked!');
+  };
+
   return (
     <>
       <div>HOME</div>
-      <Button />
+      <Button text='ojasdn' onClick={handleClick} />
+      <SecondaryButton text='yes / no' onClick={handleClick} />
     </>
   )
 }
