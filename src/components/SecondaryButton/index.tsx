@@ -6,7 +6,7 @@ type ButtonProps = {
   onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const SecondaryButton: React.FC<ButtonProps> = ({
   text, onClick
 }) => {
   return (
@@ -17,4 +17,4 @@ const Button: React.FC<ButtonProps> = ({
   )
 }
 
-export default Button;
+export default SecondaryButton;
