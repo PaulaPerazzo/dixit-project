@@ -20,4 +20,10 @@ export const StyledButton = styled.button`
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    transition: background-color 0.3s, filter 0.3s;
+
+    &:hover {
+      background-color: #B7B7B7;
+      filter: brightness(90%);
+    }
 `;
