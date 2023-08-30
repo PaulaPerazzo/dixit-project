@@ -1,5 +1,5 @@
-import Input from '@/components/Input'
-import { Button, SecondaryButton } from '@/components'
+
+import Navbar from '@/components/Navbar';
 
 function Home() {
 
@@ -9,10 +9,7 @@ function Home() {
 
   return (
     <>
-      <div>HOME</div>
-      <Button text='main button' onClick={handleClick} />
-      <SecondaryButton text='yes / no' onClick={handleClick} />
-      <Input placeholder='placeholder example' />
+      <Navbar />
     </>
   )
 }
