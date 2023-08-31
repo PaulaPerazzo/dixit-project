@@ -28,4 +28,5 @@ body {
     rgb(var(--background-start-rgb)); */
     font-family: 'Inter', sans-serif;
     background-color: #05020E;
+    padding: 0% 10%;
 }

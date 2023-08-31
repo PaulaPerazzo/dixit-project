@@ -9,7 +9,7 @@ const inter = Inter({
 
 export const StyledNavbar = styled.nav`
   display: flex;
-  padding: 0% 10%;
+ 
   padding-top: 1%;
   justify-content: center;
   align-items: center;

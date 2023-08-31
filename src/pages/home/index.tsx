@@ -1,4 +1,5 @@
 
+import CardList from '@/components/CardList';
 import Navbar from '@/components/Navbar';
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
   return (
     <>
       <Navbar />
+      <CardList />
     </>
   )
 }
