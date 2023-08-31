@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/home/index.tsX"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/home/index.tsX", "src/pages/api/firebase/firebase.ts"],
   "exclude": ["node_modules"]
 }
