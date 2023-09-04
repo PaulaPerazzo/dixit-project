@@ -1,5 +1,7 @@
 // utils/openaiUtils.ts
 import axios from 'axios';
+const fs = require('fs');
+const path = require('path');
 
 const openaiApi = axios.create({
   baseURL: 'https://api.openai.com/v1',
