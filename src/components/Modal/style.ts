@@ -54,3 +54,12 @@ export const ModalWrapper = styled(Modal)`
          margin-bottom: 20px;
      }
 `;
+
+export const ContainerButton = styled.div`
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   gap: 30px;
+   margin-top: -30px;
+`;

@@ -21,16 +21,11 @@ function Home() {
   return (
     <>
       <div>HOME</div>
-      <Button text='main button' onClick={handleClick} />
+      <Button text='main button' onClick={handleOpenModal} />
       <SecondaryButton text='yes / no' onClick={handleClick} />
       <Input placeholder='placeholder example' />
 
-
-      <Modal isOpen={!openModal} onRequestClose={handleCloseModal} >
-        You want to create an image-based story?
-        <SecondaryButton text='Yes'/>
-        <SecondaryButton text='No'/>
-      </Modal>
+      <Modal isOpen={openModal} onRequestClose={handleCloseModal} />
 
     </>
   )
