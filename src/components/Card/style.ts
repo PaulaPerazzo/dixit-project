@@ -1,11 +1,4 @@
 import styled from 'styled-components';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({
-  weight: '400',
-  style: 'normal',
-  subsets: ['latin'],
-});
 
 export const StyledCard = styled.figure`
   display: flex;

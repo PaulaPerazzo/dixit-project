@@ -1,5 +1,6 @@
 // src/components/navbar.tsx
 import React from 'react';
+import { useRouter } from 'next/router';
 import { StyledNavbar, NavContent, NavUserPhoto,UserPhotoImage, NavLinks, NavLink } from './style';
 
 interface NavbarProps {
@@ -8,6 +9,9 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ userPhotoUrl }) => {
   const defaultUserPhotoUrl = "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  const router = useRouter();
+  const currentPath = router.asPath;
+  let isActive = false;
 
   return (
     <StyledNavbar>
