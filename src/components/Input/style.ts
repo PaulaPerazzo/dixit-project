@@ -1,24 +1,24 @@
-
 import styled from 'styled-components';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({
-    weight: '700',
+    weight: '400',
     style: 'normal',
     subsets: ['latin'],
-});
+})
 
-export const StyledButton = styled.button`
-    width: 153px;
-    height: 45px;
+export const InputBox = styled.textarea`
+    width: 200px;
+    height: 160px;
     flex-shrink: 0;
     border-radius: 10px;
-    background: #FFF;
-    color: #000;
-    text-align: center;
+    border: 1px solid #747474;
+    background: #110F1A;
+    padding: 30px;
+    color: #B0B0B0;
     font-family: ${inter};
-    font-size: 16px;
+    font-size: 14px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: normal;
 `;
