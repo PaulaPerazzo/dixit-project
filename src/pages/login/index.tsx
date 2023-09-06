@@ -3,7 +3,7 @@ import Link from "next/link";
 
 
 // Creating login of screen
-const LoginScreen = () => {
+const Login = () => {
   return (
     <div className="relative shadow-[0px_4px_4px_rgba(0,_0,_0,_0.25)] w-full h-[734.44px] text-left text-[18px] text-black font-inter">
       <div className="absolute top-[0px] left-[0px] w-full h-[923px] ">
@@ -60,4 +60,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default Login;

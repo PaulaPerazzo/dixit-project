@@ -8,8 +8,8 @@ const inter = Inter({
 })
 
 export const InputBox = styled.textarea`
-    width: 237px;
-    height: 173px;
+    width: 200px;
+    height: 160px;
     flex-shrink: 0;
     border-radius: 10px;
     border: 1px solid #747474;
