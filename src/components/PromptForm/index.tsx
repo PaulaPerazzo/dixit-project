@@ -4,34 +4,31 @@ import { GridContainer, Divider } from '@/styles/main'
 import Button from '../Button'
 import SecondaryButton from '../SecondaryButton'
 import TerciaryButton from '../TerciaryButton'
-import { useForm } from 'react-hook-form'
- 
+import { useForm, SubmitHandler } from 'react-hook-form'
+import axios from 'axios'
+
+type FormData = {
+  promptCommand: string;
+};
 
 const PromptForm = () => {
 
-    const { register, handleSubmit } = useForm();
-
-    const handleFormSubmit = (formData : any) => {
-        console.log(formData)
-    }
-
-//   async function onSubmit(event: FormEvent<HTMLFormElement>) {
-//     event.preventDefault()
-   
-//     const formData = new FormData(event.currentTarget)
-//     console.log(formData)
-    // const response = await fetch('/api/submit', {
-    //   method: 'POST',
-    //   body: formData,
-    // })
  
-    
-    // const data = await response.json()
 
-//   }
+    const { register, handleSubmit } = useForm<FormData>();
+
+    const handleFormSubmit: SubmitHandler<FormData> = async (formData : FormData) => {
+      const formObject = {
+        "type": "CLASSIC",
+        "text": "create a new card from dixit but in the theme Infinite Cosmos: 'A galaxy filled with stars, unknown planets and extraterrestrial beings'"
+      }
+
+        const response = await axios.post('http://localhost:3000/api/images', formObject)
+        localStorage.setItem('responseData', JSON.stringify(response.data.url));
+    }
  
   return (
-    <form onSubmit={handleSubmit(handleFormSubmit)}>
+    <form onSubmit={handleSubmit(handleFormSubmit)} >
       <Input placeholder='Which card do you want to create? It can be a single word or a complete sentence.' {...register('promptCommand')}/>
       <Divider></Divider>
       <GridContainer>

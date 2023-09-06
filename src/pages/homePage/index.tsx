@@ -1,15 +1,30 @@
 import { GradientTitle, Input } from "@/components";
+
 import Navbar from "@/components/Navbar";
 import PromptForm from "@/components/PromptForm";
 import ImagePlaceholder from "@/components/Utils/ImagePlaceholder";
 import { MainPage, ColumnPage, PrimaryTitle, GridContainer } from "@/styles/main";
+import { useState, useEffect } from 'react';
 
 
+function HomePage() {
+    const [image, setImage] = useState("");
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            const storedData = localStorage.getItem('responseData');
+            if (storedData) {
+              const parsedData = JSON.parse(storedData);
+              setImage(parsedData);
+            }
+          console.log("ok")
 
-function homePage() {
+          }, 1000);
+          return () => {
+            clearInterval(intervalId);
+          };
+    }, [image]);
     return (
         <>
-        {/* import NavBar here */}
         <MainPage>
             <ColumnPage boderRight={true} borderTop={true}>
                 <GradientTitle text={"Prompt"} />
@@ -17,7 +32,7 @@ function homePage() {
                 
             </ColumnPage >
             <ColumnPage borderTop={true} padding={'20px'}>
-                <ImagePlaceholder/>
+                <ImagePlaceholder url={image}/>
             </ColumnPage>
             <ColumnPage borderLeft={true} borderTop={true}>
                 <PrimaryTitle> Generated Images</PrimaryTitle>
@@ -35,4 +50,4 @@ function homePage() {
     )
 }
 
-export default homePage;
+export default HomePage;
