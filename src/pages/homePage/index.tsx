@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 
 function HomePage() {
     const [image, setImage] = useState("");
+
     useEffect(() => {
         const intervalId = setInterval(() => {
             const storedData = localStorage.getItem('responseData');
@@ -23,6 +24,7 @@ function HomePage() {
             clearInterval(intervalId);
           };
     }, [image]);
+
     return (
         <>
         <MainPage>
