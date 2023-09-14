@@ -17,6 +17,8 @@ function HomePage() {
               const parsedData = JSON.parse(storedData);
               setImage(parsedData);
             }
+
+          localStorage.removeItem("responseData")
           console.log("ok")
 
           }, 1000);
