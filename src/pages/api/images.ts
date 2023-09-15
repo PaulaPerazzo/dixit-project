@@ -36,9 +36,11 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse){
         console.log(newText)
         const completion = await openai.images.generate({
             prompt: newText,
-            n: 1,
-            size: "256x256",
+            n: 6,
+            size: "1024x1024",
           });
+
+        console.log(completion.data)
 
         return res.status(200).send(completion.data[0]);
     }
