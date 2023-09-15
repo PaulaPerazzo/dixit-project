@@ -8,8 +8,8 @@ type ImagePlaceholderProps = {
   
   const ImagePlaceholder: React.FC<ImagePlaceholderProps> = ({width, height, url}) => {
     const imgStyle = {
-        width: '30%',
-        height: '20%',
+        width: '100%',
+        height: '100%',
       };
       
     return (

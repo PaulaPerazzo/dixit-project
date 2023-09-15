@@ -18,7 +18,7 @@ const prisma = new PrismaClient()
 
 function formatedPrompt(prompt: String, type: String){
     const promptList = prompts.join(" ");
-    return `optimize for me the prompt ${prompt} and have the theme ${type}`;
+    return `optimize for me the prompt ${prompt} and have the theme ${type} with no text on the image and in dixit card style`;
 }
 
 export default async function handler(req: NextApiRequest,res: NextApiResponse){
