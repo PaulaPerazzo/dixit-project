@@ -1,4 +1,7 @@
 
+
+
+
 import styled from 'styled-components';
 import { Inter } from 'next/font/google';
 
@@ -8,16 +11,11 @@ const inter = Inter({
     subsets: ['latin'],
 });
 
-export const StyledButton = styled.button`
-    width: 153px;
-    height: 45px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    background: #FFF;
-    color: #000;
-    text-align: center;
+export const StyledGradientTitle = styled.h1<{align?: string}>`
+    color: #FFFF;
+    text-align: ${(props) => props.align ? props.align : 'center'};
     font-family: ${inter};
-    font-size: 16px;
+    font-size: 22px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;

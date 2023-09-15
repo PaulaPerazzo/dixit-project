@@ -8,20 +8,19 @@ const inter = Inter({
 });
 
  const StyledButton = styled.button`
-    width: 119px;
-    height: 60px;
-    flex-shrink: 0;
+    width: 100px;
+    height: 40px;
     border-radius: 10px;
-    background: #CBCBCB;
-    color: #05020E;
+    border-color: #FFFFFF;
+    background-color: #05020E;
+    color: #FFFFFF;
     text-align: center;
     font-family: ${inter};
-    font-size: 22px;
+    font-size: 16px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 300;
     line-height: normal;
     transition: background-color 0.3s, filter 0.3s;
-
     &:hover {
       background-color: #B7B7B7;
       filter: brightness(90%);

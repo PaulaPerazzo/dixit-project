@@ -1,10 +1,10 @@
-import HomePage from '../../components/HomePage/HomePage';
+import Login from '../login';
 
 function Home() {
 
   return (
     <>
-      <HomePage/>
+      <Login/>
     </>
   )
 }

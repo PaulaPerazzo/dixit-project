@@ -3,14 +3,15 @@ import { StyledButton } from './style';
 
 type ButtonProps = {
   text: string;
-  onClick: () => void;
+  type?: string;
+  onClick?: () => void | Promise<void>;
 }
 
 const Button: React.FC<ButtonProps> = ({
   text, onClick
 }) => {
   return (
-    <StyledButton onClick={onClick}>
+    <StyledButton onClick={onClick} type='submit'>
       {text}
     </StyledButton>
       
