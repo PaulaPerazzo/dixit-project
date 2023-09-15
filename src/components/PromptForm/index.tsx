@@ -22,9 +22,8 @@ const PromptForm = () => {
         "type": "CLASSIC",
         "text": `${text} with no words present in the image`
       }
-
         const response = await axios.post('http://localhost:3000/api/images', formObject)
-        localStorage.setItem('responseData', JSON.stringify(response.data.url));
+        localStorage.setItem('responseData', JSON.stringify(response.data));
     }
  
   return (
