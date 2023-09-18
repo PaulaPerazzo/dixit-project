@@ -23,5 +23,6 @@ export const ContainerImages = styled.div`
     margin-left: 27%;
     margin-bottom: 16px;
 
+    padding: 8px;
     
 `;
