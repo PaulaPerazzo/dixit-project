@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ModalWrapper, ContainerButton } from './style';
 import { SecondaryButton } from '..';
+import { useRouter } from 'next/router';
 
 interface ModalProps {
   isOpen: boolean;
@@ -12,8 +13,11 @@ const Modal: React.FC<ModalProps> = ({
     onRequestClose,
 }) => {
 
+  const router = useRouter();
+
   const handleClick = () => {
-    console.log('goes to story generation')
+    console.log('goes to story generation');
+    router.push('/storiePage');
   }
 
   return (
