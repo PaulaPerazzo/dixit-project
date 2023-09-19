@@ -8,6 +8,8 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import axios from 'axios'
 import { useState } from 'react';
 import { Modal } from '..'
+import { FaSpinner } from 'react-icons/fa';
+import { Spinner } from './style'
 
 type FormData = {
   promptCommand: string;
@@ -18,6 +20,7 @@ const PromptForm = () => {
     const [openModal, setOpenModal] = useState(false);
     const [selectedButton, setSelectedButton] = useState<null | number>(null);
     const buttons = ["Classic", "Medieval", "Science", "Cyberpunk", "Space", "Realistic"]
+    const [isLoading, setIsLoading] = useState(false)
 
     const ButtonHighlighted = (props: any) => (
       <div
@@ -56,6 +59,7 @@ const PromptForm = () => {
             
 
     const handleFormSubmit: SubmitHandler<FormData> = async (formData : FormData) => {
+      setIsLoading(true)
       const selectedValue = buttons[selectedButton || 0]
       console.log(selectedValue)
       const formObject = {
@@ -68,6 +72,7 @@ const PromptForm = () => {
         localStorage.setItem('responseData', JSON.stringify(response.data.url));
 
         setOpenModal(true);
+        setIsLoading(false)
         setSelectedButton(null)
     }
  
@@ -89,7 +94,9 @@ const PromptForm = () => {
         })
       }
       </GridContainer>
-      <Button type={"submit"} text={'Generate'}/>
+      {isLoading ? 
+        <Spinner /> :  <Button type={"submit"} text={'Generate'}/>
+      }
       <Modal isOpen={openModal} onRequestClose={handleCloseModal} />
     </form>
   )
