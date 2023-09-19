@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 
 function HomePage() {
     const [image, setImage] = useState("");
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         const intervalId = setInterval(() => {
