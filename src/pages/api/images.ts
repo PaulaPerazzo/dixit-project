@@ -33,13 +33,14 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse){
           });
 
         const newText: string = response.choices[0].message.content || text
+        
         console.log(newText)
         const completion = await openai.images.generate({
             prompt: newText,
             n: 6,
             size: "1024x1024",
           });
-
+        
         console.log(completion.data)
 
         return res.status(200).send(completion.data);

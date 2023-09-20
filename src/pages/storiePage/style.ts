@@ -9,8 +9,8 @@ export const Container = styled.div`
 `;
 
 export const ContainerText = styled.div`
-    width: 592px;
-    height: 370px;
+    width: 792px;
+    height: 500px;
     flex-shrink: 0;
     
     background: #110F1A;
@@ -19,19 +19,27 @@ export const ContainerText = styled.div`
 
     text-align: justify;
 
+    margin-left: auto;
+    margin-right: auto;
+
     margin-bottom: 5%;
+    font-size: 14px;
+
+    max-width: 100%;
+    // overflow: auto; 
 
 `;
 
 export const ContainerImages = styled.div`
     width: 588px;
-    height: 103px;
+    height: 133px;
     flex-shrink: 0;
 
     border-radius: 5px;
     background: #110F1A;
 
-    margin-left: 27%;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 16px;
 
     padding: 8px;

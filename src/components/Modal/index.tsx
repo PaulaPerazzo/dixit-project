@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ModalWrapper, ContainerButton } from './style';
 import { SecondaryButton } from '..';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 interface ModalProps {
   isOpen: boolean;
@@ -15,8 +16,27 @@ const Modal: React.FC<ModalProps> = ({
 
   const router = useRouter();
 
-  const handleClick = () => {
+  const handleClick = async () => {
+    let type = localStorage.getItem('type');
+    let text = localStorage.getItem('prompt');
+
+    if (type === null) {
+      type = "Classic";
+    }
+    
+    if (text === null) {
+      text = "A dog in a airplane";
+    }
+
+    const formObject = {
+      "type": type,
+      "text": `${text} with no words present in the image`
+    }
+
+
     console.log('goes to story generation');
+    const response = await axios.post("/api/histories", formObject)
+    localStorage.setItem('history', JSON.stringify(response));
     router.push('/storiePage');
   }
 

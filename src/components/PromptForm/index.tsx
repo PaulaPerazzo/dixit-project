@@ -61,14 +61,17 @@ const PromptForm = () => {
     const handleFormSubmit: SubmitHandler<FormData> = async (formData : FormData) => {
       setIsLoading(true)
       const selectedValue = buttons[selectedButton || 0]
-      console.log(selectedValue)
+      
       const formObject = {
         "type": selectedValue,
         "text": `${text} with no words present in the image`
       }
 
-      
+
+
         const response = await axios.post('/api/images', formObject)
+        localStorage.setItem("prompt", text);
+        localStorage.setItem("type", selectedValue);
         localStorage.setItem('responseData', JSON.stringify(response.data));
 
         setOpenModal(true);
