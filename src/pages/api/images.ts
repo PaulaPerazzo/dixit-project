@@ -18,7 +18,7 @@ const prisma = new PrismaClient()
 
 function formatedPrompt(prompt: String, type: String){
     const promptList = prompts.join(" ");
-    return `optimize for me the prompt ${prompt} and have the theme ${type}`;
+    return `optimize for me the prompt ${prompt} and have the theme ${type} with no text on the image and in style whimsical, dreamlike, and surreal (it has to be abstract, have vibrant colors and be surrealistic) and make it less than 1000 characters. `;
 }
 
 export default async function handler(req: NextApiRequest,res: NextApiResponse){
@@ -33,14 +33,15 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse){
           });
 
         const newText: string = response.choices[0].message.content || text
+        
         console.log(newText)
         const completion = await openai.images.generate({
             prompt: newText,
             n: 6,
             size: "1024x1024",
           });
-
-
+       
+        console.log(completion.data)
         return res.status(200).send(completion.data);
     }
 }
