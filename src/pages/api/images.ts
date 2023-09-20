@@ -42,6 +42,6 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse){
 
         console.log(completion.data)
 
-        return res.status(200).send(completion.data[0]);
+        return res.status(200).send(completion.data);
     }
 }

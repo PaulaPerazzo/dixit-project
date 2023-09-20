@@ -8,7 +8,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import axios from 'axios'
 import { useState } from 'react';
 import { Modal } from '..'
-import { FaSpinner } from 'react-icons/fa';
+// import { FaSpinner } from 'react-icons/fa';
 import { Spinner } from './style'
 
 type FormData = {
@@ -69,7 +69,7 @@ const PromptForm = () => {
 
       
         const response = await axios.post('http://localhost:3000/api/images', formObject)
-        localStorage.setItem('responseData', JSON.stringify(response.data.url));
+        localStorage.setItem('responseData', JSON.stringify(response.data));
 
         setOpenModal(true);
         setIsLoading(false)
