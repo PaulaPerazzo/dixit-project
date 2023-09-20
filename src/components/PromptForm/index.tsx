@@ -68,7 +68,7 @@ const PromptForm = () => {
       }
 
       
-        const response = await axios.post('http://localhost:3000/api/images', formObject)
+        const response = await axios.post('/api/images', formObject)
         localStorage.setItem('responseData', JSON.stringify(response.data));
 
         setOpenModal(true);

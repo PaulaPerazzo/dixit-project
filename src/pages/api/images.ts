@@ -18,7 +18,7 @@ const prisma = new PrismaClient()
 
 function formatedPrompt(prompt: String, type: String){
     const promptList = prompts.join(" ");
-    return `optimize for me the prompt ${prompt} and have the theme ${type} with no text on the image and in style whimsical, dreamlike, and surreal (it has to be abstract, have vibrant colors and be surrealistic). `;
+    return `optimize for me the prompt ${prompt} and have the theme ${type} with no text on the image and in style whimsical, dreamlike, and surreal (it has to be abstract, have vibrant colors and be surrealistic) and make it less than 1000 characters. `;
 }
 
 export default async function handler(req: NextApiRequest,res: NextApiResponse){

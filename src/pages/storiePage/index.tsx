@@ -8,11 +8,16 @@ import { useState, useEffect } from 'react';
 import { ContainerText, ContainerImages } from "./style";
 import Button from '../../components/Button';
 
+type ParsedDataItem = {
+  url: string;
+};
 
 function HomePage() {
   const [image, setImage] = useState("");
-  const text = "Create a vintage style image that is reminiscent of a classic Dixit card. The main focus should be on depicting a traditional beer scene, such as a lithe hand gripping a frosty beer mug or perhaps a rustic alehouse in the distance. Unsurprisingly, vibrant colors and whimsical elements are highly encouraged to induce a sense of nostalgia and classism. There should be no text or words present anywhere in the image. The aim of the design should engage the viewer to interpret the classic theme of beer without any written explanation."
+  const [arrayImage, setArrayImage] = useState<string[]>([]);
+  const [storieText, setStorieText] = useState<string>();
 
+  const text = "Create a vintage style image that is reminiscent of a classic Dixit card. The main focus should be on depicting a traditional beer scene, such as a lithe hand gripping a frosty beer mug or perhaps a rustic alehouse in the distance. Unsurprisingly, vibrant colors and whimsical elements are highly encouraged to induce a sense of nostalgia and classism. There should be no text or words present anywhere in the image. The aim of the design should engage the viewer to interpret the classic theme of beer without any written explanation."
 
   const handlePdfGenerator = () => {
     // colocar o pdf generator aqui
@@ -23,12 +28,13 @@ function HomePage() {
       const intervalId = setInterval(() => {
           const storedData = localStorage.getItem('responseData');
           if (storedData) {
-            const parsedData = JSON.parse(storedData);
-            setImage(parsedData);
+            const parsedData: ParsedDataItem[] = JSON.parse(storedData);
+            const arrayOfUrls = parsedData.map(({ url }) => url);
+            setArrayImage(arrayOfUrls);
           }
 
-        localStorage.removeItem("responseData")
-        console.log("ok")
+        // localStorage.removeItem("responseData")
+        // console.log("ok")
 
         }, 1000);
         return () => {
@@ -40,7 +46,12 @@ function HomePage() {
   return (
       <>
       <ContainerImages>
-        IMAGEM1 IMAGEM2 IMAGEM3 IMAGEM4 IMAGEM5 IMAGEM6
+        <ImagePlaceholder width='50px' height='75px' url={arrayImage[0]}/>
+        <ImagePlaceholder width='50px' height='75px' url={arrayImage[1]}/>
+        <ImagePlaceholder width='50px' height='75px' url={arrayImage[2]}/>
+        <ImagePlaceholder width='50px' height='75px' url={arrayImage[3]}/>
+        <ImagePlaceholder width='50px' height='75px' url={arrayImage[4]}/>
+        <ImagePlaceholder width='50px' height='75px' url={arrayImage[5]}/>
       </ContainerImages>
       <MainPage>
           <ColumnPage boderRight={true} borderTop={true}>             

@@ -25,10 +25,8 @@ function HomePage() {
               
               setArrayImage(arrayOfUrls);
             }
-
-          localStorage.removeItem("responseData")
-          console.log("ok")
-
+        //   localStorage.removeItem("responseData")
+        
           }, 1000);
           return () => {
             clearInterval(intervalId);

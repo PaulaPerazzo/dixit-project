@@ -24,5 +24,9 @@ export const ContainerImages = styled.div`
     margin-bottom: 16px;
 
     padding: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
     
 `;
