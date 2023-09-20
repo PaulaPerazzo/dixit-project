@@ -1,5 +1,4 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { PrismaClient } from '@prisma/client'
 import OpenAI from "openai";
 import Configuration from "openai";
 
@@ -14,7 +13,6 @@ const prompts = [
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
-const prisma = new PrismaClient()
 
 function formatedPrompt(prompt: String, type: String){
     const promptList = prompts.join(" ");
