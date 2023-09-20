@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+
+  justify-content: center;
+
+`;
+
 export const ContainerText = styled.div`
     width: 592px;
     height: 370px;
@@ -9,7 +17,10 @@ export const ContainerText = styled.div`
 
     padding: 48px;
 
-    text-align: justify
+    text-align: justify;
+
+    margin-bottom: 5%;
+
 `;
 
 export const ContainerImages = styled.div`
@@ -26,7 +37,8 @@ export const ContainerImages = styled.div`
     padding: 8px;
 
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: center;
     flex-direction: row;
     
 `;

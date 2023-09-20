@@ -5,7 +5,7 @@ import PromptForm from "@/components/PromptForm";
 import ImagePlaceholder from "@/components/Utils/ImagePlaceholder";
 import { MainPage, ColumnPage, PrimaryTitle, GridContainer } from "@/styles/main";
 import { useState, useEffect } from 'react';
-import { ContainerText, ContainerImages } from "./style";
+import { ContainerText, ContainerImages, Container } from "./style";
 import Button from '../../components/Button';
 
 type ParsedDataItem = {
@@ -53,10 +53,10 @@ function HomePage() {
         <ImagePlaceholder width='50px' height='75px' url={arrayImage[4]}/>
         <ImagePlaceholder width='50px' height='75px' url={arrayImage[5]}/>
       </ContainerImages>
-      <MainPage>
+      <Container>
           <ColumnPage boderRight={true} borderTop={true}>             
           </ColumnPage >
-          <ColumnPage borderTop={true} padding={'20px'}>
+          <ColumnPage borderTop={true} padding={'20px'} align={"center"}>
               <ContainerText>
                 {text}    
               </ContainerText>
@@ -66,7 +66,7 @@ function HomePage() {
           </ColumnPage>
           <ColumnPage borderLeft={true} borderTop={true}>
           </ColumnPage>
-      </MainPage>
+      </Container>
       
       </>
   )
