@@ -22,3 +22,5 @@ export const Links = styled.div`
     justify-content: center;
     gap: 40px;
 `
+
+export default MainContent;

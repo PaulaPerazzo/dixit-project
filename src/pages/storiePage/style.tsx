@@ -50,3 +50,5 @@ export const ContainerImages = styled.div`
     flex-direction: row;
     
 `;
+
+export default Container;
