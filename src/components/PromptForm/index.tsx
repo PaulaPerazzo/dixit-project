@@ -66,9 +66,7 @@ const PromptForm = () => {
         "type": selectedValue,
         "text": `${text} with no words present in the image`
       }
-
-
-
+      
         const response = await axios.post('/api/images', formObject)
         localStorage.setItem("prompt", text);
         localStorage.setItem("type", selectedValue);

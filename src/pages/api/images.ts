@@ -40,9 +40,8 @@ export default async function handler(req: NextApiRequest,res: NextApiResponse){
             n: 6,
             size: "1024x1024",
           });
-        
+       
         console.log(completion.data)
-
         return res.status(200).send(completion.data);
     }
 }
